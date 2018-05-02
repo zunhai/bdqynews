@@ -9,6 +9,7 @@ from news.items import NewsItem
 import sys
 import os
 import time
+import io
 reload(sys)
 sys.setdefaultencoding('utf-8')
 os.environ['NLS_LANG'] = 'SIMPLIFIED CHINESE_CHINA.UTF8'
@@ -21,13 +22,21 @@ class HycSpider(scrapy.Spider):
 
     def start_requests(self):
         url = ''
-        with open('xxx.json' , encoding='utf-8') as f:
+        user_agent = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36"
+        headers = {'User-Agent': user_agent}
+        with io.open('xxx.json' , encoding='utf-8') as f:
             for i in range(100000):
                 url = f.readline().strip('\n')
+                pripid = url['pripid']
+                url = url['url']
+                print(url,pripid)
                 try:
-                    yield scrapy.Request(url=url , meta = {"url" : url} ,callback=self.parse2)
+                    yield scrapy.Request(url=url , meta = {"pripid" : pripid} ,callback=self.parse2)
                 except:
                     pass
+
+
+
     def parse2(self, response):
         try:
             hx = Selector(response)
