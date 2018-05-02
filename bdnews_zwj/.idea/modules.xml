@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/bdnews.iml" filepath="$PROJECT_DIR$/.idea/bdnews.iml" />
+      <module fileurl="file://E:\01-八爪鱼采集数据存放信息\spider_bak\zlzp\.idea\zlzp.iml" filepath="E:\01-八爪鱼采集数据存放信息\spider_bak\zlzp\.idea\zlzp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../zlzp_gzs/.idea/zlzp_gzs.iml" filepath="$PROJECT_DIR$/../zlzp_gzs/.idea/zlzp_gzs.iml" />
+    </modules>
+  </component>
+</project>
